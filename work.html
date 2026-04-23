@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work — Arsalan Abbas | Video Editing Portfolio</title>
+  <meta name="description" content="Video editing portfolio of Arsalan Abbas — reels, YouTube edits, ads, cinematic films, and development projects." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="work.css" />
+</head>
+<body class="work-page">
+
+  <!-- CURSOR -->
+  <div class="cursor-dot" id="cdot"></div>
+  <div class="cursor-ring" id="cring"></div>
+  <div class="cursor-text" id="ctext"></div>
+  <div class="grain"></div>
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- NAV (reused) -->
+  <header class="site-nav" id="site-nav">
+    <div class="nav-wrap">
+      <a href="index.html" class="brand">
+        <div class="brand-icon">AA</div>
+        <div class="brand-text">
+          <span>Arsalan</span>
+          <span class="brand-sub">Abbas</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html#services" class="nl">Services</a>
+        <a href="index.html#about" class="nl">About</a>
+        <a href="work.html" class="nl active">Work</a>
+        <a href="index.html#contact" class="nl">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <a href="index.html#contact" class="nav-work-btn">
+          <span class="nwb-dot"></span>Start a Project
+        </a>
+        <button class="burger" id="burger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="index.html#services" class="mnl">Services</a>
+      <a href="index.html#about" class="mnl">About</a>
+      <a href="work.html" class="mnl">Work</a>
+      <a href="index.html#contact" class="mnl">Contact</a>
+    </div>
+  </header>
+
+  <!-- ======================== WORK HERO ======================== -->
+  <section class="work-hero">
+    <div class="wh-bg">
+      <div class="wh-orb a"></div>
+      <div class="wh-orb b"></div>
+      <div class="wh-grid"></div>
+    </div>
+    <div class="wrap">
+      <div class="wh-content">
+        <div class="wh-breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span>Work</span>
+        </div>
+        <h1 class="wh-title">
+          <span class="wh-line">My</span>
+          <span class="wh-line gold-text">Work.</span>
+        </h1>
+        <p class="wh-desc">Where ideas turn into reality. Every project crafted with precision, creativity, and purpose — designed to perform, not just impress.</p>
+
+        <div class="wh-stats">
+          <div class="whs"><span class="count" data-n="50">0</span><sup>+</sup><em>Projects</em></div>
+          <div class="whs"><span class="count" data-n="5">0</span><sup>M+</sup><em>Views</em></div>
+          <div class="whs"><span class="count" data-n="30">0</span><sup>+</sup><em>Clients</em></div>
+        </div>
+      </div>
+    </div>
+    <div class="wh-scroll-hint">
+      <div class="wh-line-scroll"></div>
+      <span>Explore</span>
+    </div>
+  </section>
+
+  <!-- ======================== FILTER TABS ======================== -->
+  <div class="work-filters" id="work-filters">
+    <div class="filter-scroll">
+      <div class="filter-wrap">
+        <button class="filter-btn active" data-cat="all">
+          <span>All Work</span>
+          <span class="f-count" id="cnt-all">12</span>
+        </button>
+        <button class="filter-btn" data-cat="reel">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 2l-4 5-4-5"/></svg>
+          <span>Reels &amp; TikTok</span>
+          <span class="f-count" id="cnt-reel">4</span>
+        </button>
+        <button class="filter-btn" data-cat="youtube">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          <span>YouTube</span>
+          <span class="f-count" id="cnt-youtube">3</span>
+        </button>
+        <button class="filter-btn" data-cat="ads">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <span>Ad Creatives</span>
+          <span class="f-count" id="cnt-ads">2</span>
+        </button>
+        <button class="filter-btn" data-cat="cinematic">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 4v16M17 4v16M3 8h4m10 0h4M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg>
+          <span>Cinematic</span>
+          <span class="f-count" id="cnt-cinematic">2</span>
+        </button>
+        <button class="filter-btn" data-cat="dev">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <span>Development</span>
+          <span class="f-count" id="cnt-dev">1</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================== FEATURED REEL ======================== -->
+  <section class="featured-section" id="featured">
+    <div class="wrap">
+      <div class="featured-label">
+        <span class="feat-dot"></span>
+        <span>Featured Project</span>
+      </div>
+      <div class="featured-card work-item" data-cat="reel" data-video-url="">
+        <div class="feat-thumb">
+          <div class="feat-grad"></div>
+          <div class="feat-meta-overlay">
+            <span class="feat-cat-badge">Viral Reel Campaign</span>
+          </div>
+          <div class="feat-play-btn">
+            <div class="fpb-ring"></div>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <div class="feat-duration">2:34</div>
+        </div>
+        <div class="feat-info">
+          <div class="feat-tags">
+            <span>Short-Form</span>
+            <span>Viral</span>
+            <span>2M+ Views</span>
+          </div>
+          <h2 class="feat-title">Viral Brand Awareness Campaign</h2>
+          <p class="feat-desc">A series of high-retention short-form videos that generated over 2 million views combined in the first 30 days. Hook-first editing with dynamic transitions, sound-sync, and strategic captions engineered for algorithm performance.</p>
+          <div class="feat-results">
+            <div class="fr-item">
+              <span class="fr-n">2M+</span>
+              <span class="fr-l">Total Views</span>
+            </div>
+            <div class="fr-item">
+              <span class="fr-n">340%</span>
+              <span class="fr-l">Engagement Lift</span>
+            </div>
+            <div class="fr-item">
+              <span class="fr-n">30</span>
+              <span class="fr-l">Days Campaign</span>
+            </div>
+          </div>
+          <button class="btn-gold magnetic-btn feat-cta" data-video-url="" data-title="Viral Brand Campaign" data-cat="Reel">
+            <span class="btn-gold-bg"></span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <span>Watch Reel</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== REELS SECTION ======================== -->
+  <section class="reels-section" id="reels-sec">
+    <div class="wrap">
+      <div class="ws-head">
+        <div class="ws-label">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 2l-4 5-4-5"/></svg>
+          Reels &amp; Short-Form
+        </div>
+        <p>Scroll-stopping vertical content built for maximum retention and virality.</p>
+      </div>
+
+      <div class="reels-grid">
+        <!-- Reel 1 -->
+        <div class="reel-card work-item" data-cat="reel" data-video-url="" data-title="Fashion Brand Reel" data-desc="Cinematic fashion reel with dynamic cuts and trend-native sound sync.">
+          <div class="reel-phone">
+            <div class="phone-frame">
+              <div class="phone-screen">
+                <div class="reel-thumb rg1"></div>
+                <div class="reel-overlay">
+                  <div class="reel-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                </div>
+                <div class="reel-info-overlay">
+                  <span class="reel-duration">0:28</span>
+                  <div class="reel-title-overlay">Fashion Brand Reel</div>
+                  <div class="reel-views">847K views</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reel-meta">
+            <span class="rm-cat">Reel</span>
+            <h4>Fashion Brand Reel</h4>
+            <span class="rm-views">847K Views</span>
+          </div>
+        </div>
+
+        <!-- Reel 2 -->
+        <div class="reel-card work-item" data-cat="reel" data-video-url="" data-title="Restaurant Promo Reel" data-desc="High-appetite food reel with slow-motion shots and color-graded warmth.">
+          <div class="reel-phone">
+            <div class="phone-frame">
+              <div class="phone-screen">
+                <div class="reel-thumb rg2"></div>
+                <div class="reel-overlay">
+                  <div class="reel-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                </div>
+                <div class="reel-info-overlay">
+                  <span class="reel-duration">0:32</span>
+                  <div class="reel-title-overlay">Restaurant Promo</div>
+                  <div class="reel-views">1.2M views</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reel-meta">
+            <span class="rm-cat">Reel</span>
+            <h4>Restaurant Promo Reel</h4>
+            <span class="rm-views">1.2M Views</span>
+          </div>
+        </div>
+
+        <!-- Reel 3 -->
+        <div class="reel-card work-item" data-cat="reel" data-video-url="" data-title="Fitness Motivation Reel" data-desc="High-energy gym motivation reel with BPM-synced cuts and 3D text overlays.">
+          <div class="reel-phone">
+            <div class="phone-frame">
+              <div class="phone-screen">
+                <div class="reel-thumb rg3"></div>
+                <div class="reel-overlay">
+                  <div class="reel-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                </div>
+                <div class="reel-info-overlay">
+                  <span class="reel-duration">0:45</span>
+                  <div class="reel-title-overlay">Fitness Motivation</div>
+                  <div class="reel-views">560K views</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reel-meta">
+            <span class="rm-cat">TikTok</span>
+            <h4>Fitness Motivation Reel</h4>
+            <span class="rm-views">560K Views</span>
+          </div>
+        </div>
+
+        <!-- Reel 4 -->
+        <div class="reel-card work-item" data-cat="reel" data-video-url="" data-title="Tech Product Reveal" data-desc="Sleek product reveal reel with 3D-integrated graphics and premium color grade.">
+          <div class="reel-phone">
+            <div class="phone-frame">
+              <div class="phone-screen">
+                <div class="reel-thumb rg4"></div>
+                <div class="reel-overlay">
+                  <div class="reel-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                </div>
+                <div class="reel-info-overlay">
+                  <span class="reel-duration">0:22</span>
+                  <div class="reel-title-overlay">Tech Product Reveal</div>
+                  <div class="reel-views">2.1M views</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reel-meta">
+            <span class="rm-cat">TikTok · Reel</span>
+            <h4>Tech Product Reveal</h4>
+            <span class="rm-views">2.1M Views</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== YOUTUBE SECTION ======================== -->
+  <section class="yt-section ws-section" id="yt-sec">
+    <div class="wrap">
+      <div class="ws-head">
+        <div class="ws-label">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          YouTube Editing
+        </div>
+        <p>Story-driven, retention-optimized long-form content that keeps audiences watching.</p>
+      </div>
+
+      <div class="yt-grid">
+        <div class="yt-card work-item" data-cat="youtube" data-video-url="" data-title="Tech Documentary Edit" data-desc="A 22-minute deep-dive documentary with cinematic B-roll, interview cuts, and motion graphics.">
+          <div class="yt-thumb">
+            <div class="ytg1"></div>
+            <div class="yt-overlay">
+              <div class="yt-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            </div>
+            <div class="yt-duration">22:14</div>
+            <div class="yt-badge">YouTube</div>
+          </div>
+          <div class="yt-info">
+            <h4>Tech Industry Documentary</h4>
+            <p>Deep-dive documentary with professional interview editing, B-roll, and motion graphics.</p>
+            <div class="yt-meta">
+              <span>98K Views</span>
+              <span>·</span>
+              <span>Documentary</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="yt-card work-item" data-cat="youtube" data-video-url="" data-title="Vlog Edit Series" data-desc="Weekly vlog series with consistent brand style, custom intro/outro, and retention hooks.">
+          <div class="yt-thumb">
+            <div class="ytg2"></div>
+            <div class="yt-overlay">
+              <div class="yt-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            </div>
+            <div class="yt-duration">14:32</div>
+            <div class="yt-badge">YouTube</div>
+          </div>
+          <div class="yt-info">
+            <h4>Travel Vlog Series</h4>
+            <p>Consistent weekly edits with brand identity, custom graphics, and retention optimization.</p>
+            <div class="yt-meta">
+              <span>250K Views</span>
+              <span>·</span>
+              <span>Vlog Series</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="yt-card work-item" data-cat="youtube" data-video-url="" data-title="Tutorial Series Edit" data-desc="Educational tutorial series with clean cuts, on-screen annotations, and engagement hooks.">
+          <div class="yt-thumb">
+            <div class="ytg3"></div>
+            <div class="yt-overlay">
+              <div class="yt-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            </div>
+            <div class="yt-duration">18:05</div>
+            <div class="yt-badge">YouTube</div>
+          </div>
+          <div class="yt-info">
+            <h4>Educational Tutorial Series</h4>
+            <p>Clean, professional tutorial editing with annotations, B-roll, and strategic CTAs.</p>
+            <div class="yt-meta">
+              <span>175K Views</span>
+              <span>·</span>
+              <span>Education</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== ADS SECTION ======================== -->
+  <section class="ads-section ws-section" id="ads-sec">
+    <div class="wrap">
+      <div class="ws-head">
+        <div class="ws-label">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          Ad Creatives
+        </div>
+        <p>Performance-driven ad creatives built to convert — designed for clicks, leads, and ROI.</p>
+      </div>
+
+      <div class="ads-grid">
+        <div class="ad-card work-item" data-cat="ads" data-video-url="" data-title="E-Commerce Product Ad" data-desc="High-converting product showcase ad with UGC-style hook and direct response CTA.">
+          <div class="ad-thumb">
+            <div class="adg1"></div>
+            <div class="ad-overlay">
+              <div class="ad-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            </div>
+            <div class="ad-badge">ROAS 4.2x</div>
+            <div class="ad-duration">0:15</div>
+          </div>
+          <div class="ad-info">
+            <span class="ad-platform">Meta Ads</span>
+            <h4>E-Commerce Product Ad</h4>
+            <p>UGC-style ad with hook-first structure, lifestyle shots, and direct response CTA.</p>
+            <div class="ad-results">
+              <span>4.2x ROAS</span>
+              <span>·</span>
+              <span>CTR 8.4%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ad-card work-item" data-cat="ads" data-video-url="" data-title="SaaS App Launch Ad" data-desc="Animated explainer-style ad for SaaS product launch with screen recordings and motion text.">
+          <div class="ad-thumb">
+            <div class="adg2"></div>
+            <div class="ad-overlay">
+              <div class="ad-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            </div>
+            <div class="ad-badge">2.8x ROAS</div>
+            <div class="ad-duration">0:30</div>
+          </div>
+          <div class="ad-info">
+            <span class="ad-platform">YouTube Ads</span>
+            <h4>SaaS App Launch Ad</h4>
+            <p>Animated screen-recording ad with motion graphics and high-converting script structure.</p>
+            <div class="ad-results">
+              <span>2.8x ROAS</span>
+              <span>·</span>
+              <span>12% CVR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== CINEMATIC SECTION ======================== -->
+  <section class="cinematic-section ws-section" id="cinema-sec">
+    <div class="wrap">
+      <div class="ws-head">
+        <div class="ws-label">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 4v16M17 4v16M3 8h4m10 0h4M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg>
+          Cinematic Edits
+        </div>
+        <p>Storytelling depth meets technical excellence — cinematic films that leave an impression.</p>
+      </div>
+
+      <div class="cinema-grid">
+        <div class="cinema-card work-item" data-cat="cinematic" data-video-url="" data-title="Brand Film" data-desc="Full brand story told through cinematic visuals, music, and powerful narration.">
+          <div class="cinema-thumb">
+            <div class="cg1"></div>
+            <div class="cinema-overlay">
+              <div class="cinema-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+              <div class="cinema-info">
+                <h4>Brand Cinematic Film</h4>
+                <p>Full brand story — 3 minutes of emotion, identity, and purpose.</p>
+                <span>3:24</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cinema-card work-item" data-cat="cinematic" data-video-url="" data-title="Corporate Showreel" data-desc="High-end corporate showreel with drone footage, 3D titles, and epic soundtrack.">
+          <div class="cinema-thumb">
+            <div class="cg2"></div>
+            <div class="cinema-overlay">
+              <div class="cinema-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+              <div class="cinema-info">
+                <h4>Corporate Showreel</h4>
+                <p>Drone footage, 3D elements, and premium color grade.</p>
+                <span>2:10</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== DEV SECTION ======================== -->
+  <section class="dev-section ws-section" id="dev-sec">
+    <div class="wrap">
+      <div class="ws-head">
+        <div class="ws-label">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          Development Projects
+        </div>
+        <p>Web and mobile applications built with precision, scalability, and beautiful design.</p>
+      </div>
+
+      <div class="dev-grid">
+        <div class="dev-card work-item" data-cat="dev" data-video-url="" data-title="E-Commerce Platform" data-desc="Full-stack e-commerce platform with React, Node.js, and payment integration.">
+          <div class="dev-thumb">
+            <div class="devg1"></div>
+            <div class="dev-code-overlay">
+              <pre><code>&lt;App
+  theme="premium"
+  stack="React"
+/&gt;</code></pre>
+            </div>
+            <a href="#" class="dev-live-btn" target="_blank">Live →</a>
+          </div>
+          <div class="dev-info">
+            <div class="dev-stack">
+              <span>React</span><span>Node.js</span><span>MongoDB</span>
+            </div>
+            <h4>E-Commerce Platform</h4>
+            <p>Full-stack solution with product catalog, cart, payments, and admin dashboard.</p>
+          </div>
+        </div>
+
+        <div class="dev-card work-item" data-cat="dev" data-video-url="" data-title="Flutter Mobile App" data-desc="Cross-platform fitness tracking app built with Flutter and Firebase.">
+          <div class="dev-thumb">
+            <div class="devg2"></div>
+            <div class="dev-code-overlay">
+              <pre><code>flutter build
+  --platform iOS
+  --platform Android</code></pre>
+            </div>
+            <a href="#" class="dev-live-btn" target="_blank">Live →</a>
+          </div>
+          <div class="dev-info">
+            <div class="dev-stack">
+              <span>Flutter</span><span>Firebase</span><span>Dart</span>
+            </div>
+            <h4>Fitness Tracker App</h4>
+            <p>Cross-platform mobile app with workout tracking, analytics, and social features.</p>
+          </div>
+        </div>
+
+        <div class="dev-card work-item" data-cat="dev" data-video-url="" data-title="SaaS Landing Page" data-desc="High-converting SaaS landing page with animations and premium design.">
+          <div class="dev-thumb">
+            <div class="devg3"></div>
+            <div class="dev-code-overlay">
+              <pre><code>const conversion
+  = design +
+    copy + speed;</code></pre>
+            </div>
+            <a href="#" class="dev-live-btn" target="_blank">Live →</a>
+          </div>
+          <div class="dev-info">
+            <div class="dev-stack">
+              <span>Next.js</span><span>Tailwind</span><span>Framer</span>
+            </div>
+            <h4>SaaS Landing Page</h4>
+            <p>Premium landing page with 12% conversion rate, animations, and A/B tested copy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== CTA BANNER ======================== -->
+  <section class="work-cta-banner">
+    <div class="wcb-bg"></div>
+    <div class="wrap">
+      <div class="wcb-inner">
+        <div class="wcb-left">
+          <h2>Ready to be the <span class="gold-text">next success story?</span></h2>
+          <p>Every project on this page started with a single message. Let's start yours.</p>
+        </div>
+        <div class="wcb-right">
+          <a href="index.html#contact" class="btn-gold magnetic-btn">
+            <span class="btn-gold-bg"></span>
+            <span>Start Your Project →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <div class="footer-logo">AA</div>
+          <p class="footer-brand-name">Arsalan Abbas</p>
+          <p class="footer-brand-role">Video Editor · Software Engineer</p>
+          <p class="footer-tagline">Crafting Experiences. Delivering Results.</p>
+        </div>
+        <div class="footer-links-col">
+          <h4>Navigation</h4>
+          <a href="index.html">Home</a>
+          <a href="index.html#services">Services</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="footer-links-col">
+          <h4>Work</h4>
+          <a href="#reels-sec">Reels</a>
+          <a href="#yt-sec">YouTube</a>
+          <a href="#ads-sec">Ad Creatives</a>
+          <a href="#dev-sec">Development</a>
+        </div>
+        <div class="footer-links-col">
+          <h4>Contact</h4>
+          <a href="mailto:arsalify@gmail.com">arsalify@gmail.com</a>
+          <a href="https://wa.me/923185961013" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="index.html#contact">Hire Me</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Arsalan Abbas. All Rights Reserved.</span>
+        <span>Built with precision &amp; purpose.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================== VIDEO LIGHTBOX ======================== -->
+  <div class="lightbox" id="lightbox">
+    <div class="lb-backdrop" id="lb-backdrop"></div>
+    <div class="lb-box" id="lb-box">
+      <button class="lb-close" id="lb-close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="lb-header">
+        <span class="lb-cat" id="lb-cat">Video</span>
+        <h3 class="lb-title" id="lb-title">Project Title</h3>
+        <p class="lb-desc" id="lb-desc">Project description</p>
+      </div>
+      <div class="lb-video" id="lb-video">
+        <div class="lb-placeholder" id="lb-placeholder">
+          <div class="lbp-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <p>Add your video embed URL to the <code>data-video-url</code> attribute</p>
+          <span>Replace with your YouTube/Vimeo iframe embed</span>
+        </div>
+        <div id="lb-iframe-wrap"></div>
+      </div>
+      <div class="lb-footer">
+        <a href="index.html#contact" class="btn-gold magnetic-btn" id="lb-hire-btn">
+          <span class="btn-gold-bg"></span>
+          <span>Hire Me for Similar Work →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="work.js"></script>
+</body>
+</html>

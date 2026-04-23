@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arsalan Abbas — Video Editor & Software Engineer</title>
+  <meta name="description" content="Arsalan Abbas — Professional Video Editor and Software Engineer crafting high-impact content and powerful applications." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="pre-bg"></div>
+    <div class="pre-content">
+      <div class="pre-logo-wrap">
+        <svg class="pre-svg" viewBox="0 0 120 70" fill="none">
+          <path class="pre-path p1" d="M12 58 L36 12 L60 58 M24 40 H48" stroke="url(#g1)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path class="pre-path p2" d="M70 12 V58 M70 12 Q100 12 100 35 Q100 58 70 58" stroke="url(#g1)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#d4a847"/>
+              <stop offset="100%" stop-color="#f0c866"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="pre-tagline">Crafting Experiences</div>
+      <div class="pre-bar-wrap">
+        <div class="pre-bar" id="pre-bar"></div>
+      </div>
+      <div class="pre-num" id="pre-num">0%</div>
+    </div>
+    <div class="pre-panels">
+      <div class="pre-panel"></div>
+      <div class="pre-panel"></div>
+    </div>
+  </div>
+
+  <!-- CURSOR -->
+  <div class="cursor-dot" id="cdot"></div>
+  <div class="cursor-ring" id="cring"></div>
+  <div class="cursor-text" id="ctext"></div>
+
+  <!-- NOISE -->
+  <div class="grain"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- ======================== NAV ======================== -->
+  <header class="site-nav" id="site-nav">
+    <div class="nav-wrap">
+      <a href="index.html" class="brand">
+        <div class="brand-icon">AA</div>
+        <div class="brand-text">
+          <span>Arsalan</span>
+          <span class="brand-sub">Abbas</span>
+        </div>
+      </a>
+
+      <nav class="main-nav">
+        <a href="#services" class="nl">Services</a>
+        <a href="#about" class="nl">About</a>
+        <a href="work.html" class="nl active">Work</a>
+        <a href="#contact" class="nl">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <a href="work.html" class="nav-work-btn">
+          <span class="nwb-dot"></span>View My Work
+        </a>
+        <button class="burger" id="burger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="#services" class="mnl">Services</a>
+      <a href="#about" class="mnl">About</a>
+      <a href="work.html" class="mnl">Work</a>
+      <a href="#contact" class="mnl">Contact</a>
+    </div>
+  </header>
+
+  <!-- ======================== HERO ======================== -->
+  <section class="hero" id="hero">
+    <!-- 3D Background Scene -->
+    <div class="hero-scene">
+      <canvas id="particle-canvas"></canvas>
+      <div class="scene-spotlight" id="scene-spotlight"></div>
+      <div class="grid-3d">
+        <div class="grid-floor"></div>
+      </div>
+      <div class="orb-a"></div>
+      <div class="orb-b"></div>
+      <div class="orb-c"></div>
+    </div>
+
+    <!-- 3D Floating Shapes -->
+    <div class="shapes-3d" aria-hidden="true">
+      <div class="shape cube-shape s1">
+        <div class="cube">
+          <div class="face front"></div><div class="face back"></div>
+          <div class="face left"></div><div class="face right"></div>
+          <div class="face top"></div><div class="face bottom"></div>
+        </div>
+      </div>
+      <div class="shape cube-shape s2">
+        <div class="cube cube-sm">
+          <div class="face front"></div><div class="face back"></div>
+          <div class="face left"></div><div class="face right"></div>
+          <div class="face top"></div><div class="face bottom"></div>
+        </div>
+      </div>
+      <div class="shape diamond-shape s3">
+        <div class="diamond"></div>
+      </div>
+    </div>
+
+    <div class="hero-body">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        <span>Available for Projects — 2026</span>
+      </div>
+
+      <h1 class="hero-h1" id="hero-h1">
+        <span class="h1-line l1" data-final="Turning">Turning</span>
+        <span class="h1-line l2" data-final="Attention Into">Attention Into</span>
+        <span class="h1-line l3 gold-3d" data-final="Obsession.">Obsession.</span>
+      </h1>
+
+      <p class="hero-desc">
+        I'm <strong>Arsalan Abbas</strong> — Video Editor &amp; Software Engineer.<br />
+        I craft content that <em>stops the scroll</em> and builds digital experiences<br class="br-hide"/> that actually <em>perform.</em>
+      </p>
+
+      <p class="hero-type" id="hero-type"></p>
+
+      <div class="hero-actions">
+        <a href="work.html" class="btn-gold magnetic-btn" data-tip="View Reel">
+          <span class="btn-gold-bg"></span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span>Watch My Work</span>
+        </a>
+        <a href="#contact" class="btn-ghost magnetic-btn" data-tip="Let's Talk">
+          <span>Start a Project</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-metrics">
+        <div class="metric">
+          <div class="metric-val"><span class="count" data-n="50">0</span><sup>+</sup></div>
+          <div class="metric-lbl">Projects</div>
+        </div>
+        <div class="metric-sep"></div>
+        <div class="metric">
+          <div class="metric-val"><span class="count" data-n="30">0</span><sup>+</sup></div>
+          <div class="metric-lbl">Happy Clients</div>
+        </div>
+        <div class="metric-sep"></div>
+        <div class="metric">
+          <div class="metric-val"><span class="count" data-n="3">0</span><sup>+</sup></div>
+          <div class="metric-lbl">Years Exp.</div>
+        </div>
+        <div class="metric-sep"></div>
+        <div class="metric">
+          <div class="metric-val"><span class="count" data-n="5">0</span><sup>M+</sup></div>
+          <div class="metric-lbl">Views Generated</div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#services" class="hero-down">
+      <div class="down-line"></div>
+      <span>Scroll Down</span>
+    </a>
+  </section>
+
+  <!-- ======================== MARQUEE ======================== -->
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span>Video Editing</span><i>✦</i>
+      <span>Motion Graphics</span><i>✦</i>
+      <span>3D Integration</span><i>✦</i>
+      <span>Web Development</span><i>✦</i>
+      <span>App Development</span><i>✦</i>
+      <span>UI/UX Design</span><i>✦</i>
+      <span>Social Media Ads</span><i>✦</i>
+      <span>Cinematic Edits</span><i>✦</i>
+      <span>Video Editing</span><i>✦</i>
+      <span>Motion Graphics</span><i>✦</i>
+      <span>3D Integration</span><i>✦</i>
+      <span>Web Development</span><i>✦</i>
+      <span>App Development</span><i>✦</i>
+      <span>UI/UX Design</span><i>✦</i>
+      <span>Social Media Ads</span><i>✦</i>
+      <span>Cinematic Edits</span><i>✦</i>
+    </div>
+  </div>
+
+  <!-- ======================== SERVICES ======================== -->
+  <section class="services-section sec" id="services">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="sec-tag">What I Do</div>
+        <h2 class="sec-title">Services Built for <span class="gold-text">Impact</span></h2>
+        <p class="sec-sub">Every service engineered to stop the scroll, build trust, and convert.</p>
+      </div>
+
+      <!-- 3D FLIP CARDS GRID -->
+      <div class="flip-grid">
+
+        <div class="flip-card rv" data-d="0">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg></div>
+              <h3>Short-Form Video</h3>
+              <p>Reels, TikToks &amp; Shorts engineered for viral retention.</p>
+              <span class="fc-hint">Hover to see more →</span>
+            </div>
+            <div class="flip-back">
+              <h3>Short-Form Video</h3>
+              <ul>
+                <li>✓ Hook-first editing strategy</li>
+                <li>✓ Platform-native formats</li>
+                <li>✓ Viral caption overlays</li>
+                <li>✓ Sound design &amp; music sync</li>
+                <li>✓ Trend-aware execution</li>
+              </ul>
+              <span class="fc-tag">Reels · TikTok · Shorts</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card rv" data-d="80">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg></div>
+              <h3>YouTube Editing</h3>
+              <p>Story-driven long-form edits that keep viewers watching.</p>
+              <span class="fc-hint">Hover to see more →</span>
+            </div>
+            <div class="flip-back">
+              <h3>YouTube Editing</h3>
+              <ul>
+                <li>✓ Retention-curve optimization</li>
+                <li>✓ Chapter structure</li>
+                <li>✓ Custom thumbnails</li>
+                <li>✓ B-roll &amp; pacing mastery</li>
+                <li>✓ SEO-ready delivery</li>
+              </ul>
+              <span class="fc-tag">Long-form · Documentary</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card rv" data-d="160">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+              <h3>Motion Graphics</h3>
+              <p>High-end animated elements that elevate any video.</p>
+              <span class="fc-hint">Hover to see more →</span>
+            </div>
+            <div class="flip-back">
+              <h3>Motion Graphics</h3>
+              <ul>
+                <li>✓ Kinetic typography</li>
+                <li>✓ Logo reveals</li>
+                <li>✓ Animated lower thirds</li>
+                <li>✓ Transition packs</li>
+                <li>✓ Brand motion identity</li>
+              </ul>
+              <span class="fc-tag">After Effects · Motion</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card rv" data-d="240">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
+              <h3>3D Integration</h3>
+              <p>Seamless 3D elements composited into real footage.</p>
+              <span class="fc-hint">Hover to see more →</span>
+            </div>
+            <div class="flip-back">
+              <h3>3D Integration</h3>
+              <ul>
+                <li>✓ 3D text &amp; titles</li>
+                <li>✓ VFX compositing</li>
+                <li>✓ Product visualization</li>
+                <li>✓ Scene enhancement</li>
+                <li>✓ Blender + AE pipeline</li>
+              </ul>
+              <span class="fc-tag">Blender · Cinema 4D</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card rv" data-d="0">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+              <h3>Web Development</h3>
+              <p>Premium websites that convert visitors into clients.</p>
+              <span class="fc-hint">Hover to see more →</span>
+            </div>
+            <div class="flip-back">
+              <h3>Web Development</h3>
+              <ul>
+                <li>✓ Premium UI/UX design</li>
+                <li>✓ Fully responsive</li>
+                <li>✓ High-converting layouts</li>
+                <li>✓ Performance optimized</li>
+                <li>✓ SEO-ready structure</li>
+              </ul>
+              <span class="fc-tag">React · Next.js · Tailwind</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card rv" data-d="80">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+              <h3>App Development</h3>
+              <p>Cross-platform apps that scale from MVP to market.</p>
+              <span class="fc-hint">Hover to see more →</span>
+            </div>
+            <div class="flip-back">
+              <h3>App Development</h3>
+              <ul>
+                <li>✓ Flutter cross-platform</li>
+                <li>✓ Android &amp; iOS</li>
+                <li>✓ API integration</li>
+                <li>✓ MVP for startups</li>
+                <li>✓ Backend &amp; database</li>
+              </ul>
+              <span class="fc-tag">Flutter · Firebase · Node</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== ABOUT ======================== -->
+  <section class="about-sec sec" id="about">
+    <div class="wrap">
+      <div class="about-layout">
+        <div class="about-vis rv">
+          <div class="photo-wrap">
+
+            <!-- ✦ DECORATIVE RINGS -->
+            <div class="photo-ring r-outer"></div>
+            <div class="photo-ring r-inner"></div>
+
+            <!-- ✦ CORNER ACCENT LINES -->
+            <div class="photo-corner c-tl"></div>
+            <div class="photo-corner c-tr"></div>
+            <div class="photo-corner c-bl"></div>
+            <div class="photo-corner c-br"></div>
+
+            <!-- ✦ PHOTO FRAME -->
+            <div class="photo-frame">
+              <img
+                src="file:///C:/Users/Asad%20Computer/.cursor/projects/c-Arsal-Portifolio/assets/c__Users_Asad_Computer_AppData_Roaming_Cursor_User_workspaceStorage_58bd023d940ec21df3422afcf87eae9e_images_arsal.png-8af15f48-05e1-4a54-a378-ef702c9e8336.png"
+                alt="Arsalan Abbas"
+                class="photo-img"
+                id="profile-photo"
+                onload="document.getElementById('photo-placeholder').style.display='none'; this.style.display='block';"
+                onerror="this.style.display='none'; document.getElementById('photo-placeholder').style.display='flex';"
+              />
+              <!-- Shown when no image is provided -->
+              <div class="photo-placeholder" id="photo-placeholder">
+                <div class="php-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                  </svg>
+                </div>
+                <div class="php-initials">AA</div>
+                <div class="php-hint">Add your photo in index.html<br/><code>src="your-photo.jpg"</code></div>
+              </div>
+              <!-- Gold shimmer overlay -->
+              <div class="photo-shimmer"></div>
+            </div>
+
+            <!-- ✦ FLOATING STAT BADGES -->
+            <div class="photo-badge pb-top">
+              <div class="pbb-icon">🎬</div>
+              <div class="pbb-text">
+                <span class="pbb-n">50<sup>+</sup></span>
+                <span class="pbb-l">Projects Done</span>
+              </div>
+            </div>
+
+            <div class="photo-badge pb-mid">
+              <div class="pbb-icon">⚡</div>
+              <div class="pbb-text">
+                <span class="pbb-n">3<sup>+</sup></span>
+                <span class="pbb-l">Years Exp.</span>
+              </div>
+            </div>
+
+            <div class="photo-badge pb-bot">
+              <div class="pbb-icon">✦</div>
+              <div class="pbb-text">
+                <span class="pbb-n">5M<sup>+</sup></span>
+                <span class="pbb-l">Views Generated</span>
+              </div>
+            </div>
+
+            <!-- ✦ AVAILABILITY DOT -->
+            <div class="photo-available">
+              <span class="avail-dot"></span>
+              <span>Available for Work</span>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="about-copy rv">
+          <div class="sec-tag">About Me</div>
+          <h2 class="sec-title">Where <span class="gold-text">Code</span> Meets<br/>Storytelling</h2>
+          <p>I'm <strong>Arsalan Abbas</strong> — a Software Engineer with a deep creative vision. I operate at the intersection of technology and creativity.</p>
+          <p>My goal is to help brands, creators, and businesses grow through digital solutions that are not only visually powerful but <strong>strategically effective.</strong></p>
+
+          <div class="skill-bars">
+            <div class="skill-row">
+              <span>Video Editing</span>
+              <div class="skill-track"><div class="skill-fill" data-w="95"></div></div>
+              <span class="skill-pct">95%</span>
+            </div>
+            <div class="skill-row">
+              <span>Motion Graphics</span>
+              <div class="skill-track"><div class="skill-fill" data-w="88"></div></div>
+              <span class="skill-pct">88%</span>
+            </div>
+            <div class="skill-row">
+              <span>Web Development</span>
+              <div class="skill-track"><div class="skill-fill" data-w="90"></div></div>
+              <span class="skill-pct">90%</span>
+            </div>
+            <div class="skill-row">
+              <span>App Development</span>
+              <div class="skill-track"><div class="skill-fill" data-w="82"></div></div>
+              <span class="skill-pct">82%</span>
+            </div>
+          </div>
+
+          <div class="tool-chips">
+            <span>Premiere Pro</span><span>After Effects</span><span>DaVinci</span>
+            <span>Blender</span><span>Flutter</span><span>React</span>
+            <span>Node.js</span><span>Figma</span>
+          </div>
+
+          <a href="work.html" class="btn-gold magnetic-btn" style="display:inline-flex">
+            <span class="btn-gold-bg"></span>
+            <span>View My Work →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== IMPACT NUMBERS ======================== -->
+  <section class="impact-sec sec" id="impact">
+    <div class="impact-bg"></div>
+    <div class="wrap">
+      <div class="impact-grid">
+        <div class="impact-item rv">
+          <div class="ii-num"><span class="count" data-n="50">0</span><sup>+</sup></div>
+          <div class="ii-label">Projects Delivered</div>
+          <div class="ii-desc">Across video, web &amp; app</div>
+        </div>
+        <div class="impact-item rv" data-d="100">
+          <div class="ii-num"><span class="count" data-n="5">0</span><sup>M+</sup></div>
+          <div class="ii-label">Views Generated</div>
+          <div class="ii-desc">Combined across all clients</div>
+        </div>
+        <div class="impact-item rv" data-d="200">
+          <div class="ii-num"><span class="count" data-n="30">0</span><sup>+</sup></div>
+          <div class="ii-label">Happy Clients</div>
+          <div class="ii-desc">Brands, creators &amp; startups</div>
+        </div>
+        <div class="impact-item rv" data-d="300">
+          <div class="ii-num"><span class="count" data-n="100">0</span><sup>%</sup></div>
+          <div class="ii-label">Satisfaction Rate</div>
+          <div class="ii-desc">Quality above everything</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== WORK PREVIEW ======================== -->
+  <section class="preview-sec sec" id="work-preview">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="sec-tag">Portfolio</div>
+        <h2 class="sec-title">Selected <span class="gold-text">Work</span></h2>
+        <p class="sec-sub">A curated collection of projects crafted with precision and purpose.</p>
+      </div>
+
+      <div class="preview-grid">
+        <div class="preview-card large rv" data-d="0">
+          <div class="pc-thumb">
+            <div class="pc-grad g1"></div>
+            <div class="pc-overlay">
+              <div class="pc-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            </div>
+            <div class="pc-num">01</div>
+          </div>
+          <div class="pc-info">
+            <span class="pc-cat">Short-Form Video</span>
+            <h3>Viral Reel Campaign</h3>
+            <p>High-retention reels that generated 2M+ views in 30 days.</p>
+            <a href="work.html" class="pc-link">View Project →</a>
+          </div>
+        </div>
+
+        <div class="preview-card rv" data-d="100">
+          <div class="pc-thumb">
+            <div class="pc-grad g2"></div>
+            <div class="pc-overlay">
+              <div class="pc-play sm"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            </div>
+            <div class="pc-num">02</div>
+          </div>
+          <div class="pc-info">
+            <span class="pc-cat">YouTube</span>
+            <h3>Documentary Edit</h3>
+            <p>Story-driven long-form content.</p>
+            <a href="work.html" class="pc-link">View →</a>
+          </div>
+        </div>
+
+        <div class="preview-card rv" data-d="200">
+          <div class="pc-thumb">
+            <div class="pc-grad g3"></div>
+            <div class="pc-overlay">
+              <div class="pc-play sm"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+            </div>
+            <div class="pc-num">03</div>
+          </div>
+          <div class="pc-info">
+            <span class="pc-cat">Web Dev</span>
+            <h3>Brand Website</h3>
+            <p>High-converting landing page.</p>
+            <a href="work.html" class="pc-link">View →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="preview-cta rv">
+        <a href="work.html" class="btn-gold magnetic-btn">
+          <span class="btn-gold-bg"></span>
+          <span>View All Projects</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== TESTIMONIALS ======================== -->
+  <section class="testi-sec sec" id="testimonials">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="sec-tag">Social Proof</div>
+        <h2 class="sec-title">What Clients <span class="gold-text">Say</span></h2>
+      </div>
+
+      <div class="testi-grid">
+        <div class="testi-card rv" data-d="0">
+          <div class="tc-quote">"</div>
+          <p>"Working with Arsalan was not just hiring an editor — it was <strong>upgrading our entire content strategy.</strong> Our engagement tripled."</p>
+          <div class="tc-author">
+            <div class="tc-av">JD</div>
+            <div>
+              <strong>Jordan Davis</strong>
+              <span>Brand &amp; Content Creator</span>
+            </div>
+            <div class="tc-stars">★★★★★</div>
+          </div>
+        </div>
+
+        <div class="testi-card featured rv" data-d="150">
+          <div class="tc-badge">Featured</div>
+          <div class="tc-quote">"</div>
+          <p>"<strong>Exceptional quality, fast delivery,</strong> and a deep understanding of what actually works. Our ads started converting like never before."</p>
+          <div class="tc-author">
+            <div class="tc-av">SM</div>
+            <div>
+              <strong>Sarah Mitchell</strong>
+              <span>E-Commerce Business Owner</span>
+            </div>
+            <div class="tc-stars">★★★★★</div>
+          </div>
+        </div>
+
+        <div class="testi-card rv" data-d="300">
+          <div class="tc-quote">"</div>
+          <p>"Our YouTube channel went from 10K to 80K subscribers in 4 months. The video quality and storytelling is on another level."</p>
+          <div class="tc-author">
+            <div class="tc-av">MK</div>
+            <div>
+              <strong>Marcus King</strong>
+              <span>YouTube Creator — Tech Niche</span>
+            </div>
+            <div class="tc-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== PROCESS ======================== -->
+  <section class="process-sec sec" id="process">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="sec-tag">How I Work</div>
+        <h2 class="sec-title">Simple. Fast. <span class="gold-text">Results-driven.</span></h2>
+      </div>
+
+      <div class="process-flow">
+        <div class="pf-step rv" data-d="0">
+          <div class="pf-num">01</div>
+          <div class="pf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div>
+          <h3>Understand Vision</h3>
+          <p>Deep dive into your brand, audience, and goals before a single frame.</p>
+        </div>
+        <div class="pf-connector"></div>
+        <div class="pf-step rv" data-d="100">
+          <div class="pf-num">02</div>
+          <div class="pf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg></div>
+          <h3>Strategic Plan</h3>
+          <p>Map the creative direction, style, and structure for maximum impact.</p>
+        </div>
+        <div class="pf-connector"></div>
+        <div class="pf-step rv" data-d="200">
+          <div class="pf-num">03</div>
+          <div class="pf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <h3>Creative Execution</h3>
+          <p>Craft every frame and every line of code with precision and purpose.</p>
+        </div>
+        <div class="pf-connector"></div>
+        <div class="pf-step rv" data-d="300">
+          <div class="pf-num">04</div>
+          <div class="pf-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <h3>Deliver &amp; Optimize</h3>
+          <p>Final delivery with revisions included. Always on time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== CONTACT ======================== -->
+  <section class="contact-sec sec" id="contact">
+    <div class="contact-bg-glow"></div>
+    <div class="wrap">
+      <div class="contact-layout">
+        <div class="contact-left rv">
+          <div class="sec-tag">Get In Touch</div>
+          <h2 class="sec-title">Ready to Build<br/><span class="gold-text">Something Powerful?</span></h2>
+          <p class="contact-desc">If you're serious about growth — let's build something that actually makes an impact. I typically respond within 24 hours.</p>
+
+          <div class="contact-links">
+            <a href="mailto:arsalify@gmail.com" class="contact-link">
+              <div class="cl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+              <div>
+                <span class="cl-label">Email</span>
+                <span class="cl-val">arsalify@gmail.com</span>
+              </div>
+              <svg class="cl-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="https://wa.me/923185961013" class="contact-link" target="_blank" rel="noopener noreferrer">
+              <div class="cl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+              <div>
+                <span class="cl-label">WhatsApp</span>
+                <span class="cl-val">+923185961013</span>
+              </div>
+              <svg class="cl-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-right rv">
+          <form class="cform" id="cform">
+            <div class="cf-row">
+              <div class="cf-field">
+                <label>Your Name</label>
+                <input type="text" name="name" placeholder="Your Name" required />
+              </div>
+              <div class="cf-field">
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="Your Email" required />
+              </div>
+            </div>
+            <div class="cf-field">
+              <label>Service Needed</label>
+              <select name="service">
+                <option value="" disabled selected>Select a service</option>
+                <option>Video Editing (Short-Form)</option>
+                <option>YouTube Editing</option>
+                <option>Motion Graphics</option>
+                <option>Web Development</option>
+                <option>App Development</option>
+                <option>Full Package</option>
+              </select>
+            </div>
+            <div class="cf-field">
+              <label>Project Budget</label>
+              <select name="budget">
+                <option value="" disabled selected>Select budget range</option>
+                <option>$100 - $500</option>
+                <option>$500 - $1,500</option>
+                <option>$1,500 - $5,000</option>
+                <option>$5,000+</option>
+              </select>
+            </div>
+            <div class="cf-field">
+              <label>Tell Me About Your Project</label>
+              <textarea name="message" rows="4" placeholder="Describe your vision, goals, and timeline..." required></textarea>
+            </div>
+            <button type="submit" class="btn-gold full magnetic-btn" id="cf-submit">
+              <span class="btn-gold-bg"></span>
+              <span id="cf-text">Let's Create Something Powerful →</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== LEAVE A REVIEW ======================== -->
+  <section class="review-sec sec" id="leave-review">
+    <div class="wrap">
+      <div class="review-layout">
+        <div class="review-left rv">
+          <div class="sec-tag">Leave a Review</div>
+          <h2 class="sec-title">Worked with me?<br/><span class="gold-text">Share your experience.</span></h2>
+          <p style="color:var(--w60);font-size:1rem;line-height:1.75;max-width:380px;">Your review helps other clients trust my work — and it only takes 60 seconds.</p>
+          <div class="review-trust">
+            <div class="rt-item"><span>★★★★★</span><span>50+ reviews</span></div>
+            <div class="rt-item"><span>✓</span><span>All reviews verified</span></div>
+          </div>
+        </div>
+        <div class="review-right rv">
+          <form class="review-form-card" id="review-form">
+            <input type="hidden" name="rating" id="review-rating" value="5"/>
+            <div class="rf-row">
+              <div class="rf-field">
+                <label>Your Name</label>
+                <input type="text" name="name" placeholder="Your Name" required/>
+              </div>
+              <div class="rf-field">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Your Email" required/>
+              </div>
+            </div>
+            <div class="rf-field">
+              <label>Your Role / Company</label>
+              <input type="text" name="role" placeholder="e.g. Content Creator, Brand Owner"/>
+            </div>
+            <div class="rf-field">
+              <label>Rating</label>
+              <div class="star-picker">
+                <button type="button" class="star-btn active" data-v="1">★</button>
+                <button type="button" class="star-btn active" data-v="2">★</button>
+                <button type="button" class="star-btn active" data-v="3">★</button>
+                <button type="button" class="star-btn active" data-v="4">★</button>
+                <button type="button" class="star-btn active" data-v="5">★</button>
+              </div>
+            </div>
+            <div class="rf-field">
+              <label>Your Review</label>
+              <textarea name="review" rows="4" placeholder="Tell others about your experience working with me..." required></textarea>
+            </div>
+            <button type="submit" class="btn-gold full review-submit-btn magnetic-btn">
+              <span class="btn-gold-bg"></span>
+              <span>Submit Review →</span>
+            </button>
+            <p class="rf-note">Reviews are approved before going live. Your email is never shown publicly.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <div class="footer-logo">AA</div>
+          <p class="footer-brand-name">Arsalan Abbas</p>
+          <p class="footer-brand-role">Video Editor · Software Engineer</p>
+          <p class="footer-tagline">Crafting Experiences. Delivering Results.</p>
+        </div>
+        <div class="footer-links-col">
+          <h4>Navigation</h4>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="work.html">Work</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-links-col">
+          <h4>Services</h4>
+          <a href="#">Video Editing</a>
+          <a href="#">Motion Graphics</a>
+          <a href="#">Web Development</a>
+          <a href="#">App Development</a>
+        </div>
+        <div class="footer-links-col">
+          <h4>Contact</h4>
+          <a href="mailto:arsalify@gmail.com">arsalify@gmail.com</a>
+          <a href="https://wa.me/923185961013" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="work.html">Portfolio</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Arsalan Abbas. All Rights Reserved.</span>
+        <span>Built with precision &amp; purpose.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 3D FLOATING OBJECTS (global decorations) -->
+  <div class="global-decos" aria-hidden="true">
+    <div class="gd-ring r1"></div>
+    <div class="gd-ring r2"></div>
+    <div class="gd-dot d1"></div>
+    <div class="gd-dot d2"></div>
+    <div class="gd-dot d3"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
